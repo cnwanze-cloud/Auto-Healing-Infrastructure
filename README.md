@@ -22,6 +22,10 @@ This project provides a **step-by-step implementation guide** for building an au
 
 ## 🏗️ Architecture
 
+<img width="2720" height="2200" alt="architecture" src="https://github.com/user-attachments/assets/4b0f1e6c-f054-4012-9fc8-6e71885db111" />
+
+
+
 ```
 Auto Scaling Group (EC2 instances)
          ↓
@@ -44,13 +48,6 @@ The system works by:
 5. Lambda diagnoses each instance and takes appropriate action
 6. Team receives notifications of both the alarm and the action taken
 
-## 📋 Prerequisites
-
-- AWS Account with appropriate permissions (IAM, EC2, Auto Scaling, CloudWatch, Lambda, SNS)
-- An existing Auto Scaling Group with EC2 instances
-- AWS CLI v2 configured with credentials
-- Bash shell
-- Basic familiarity with AWS services
 
 ## 🚀 Quick Start
 
@@ -145,7 +142,6 @@ aws cloudwatch put-metric-alarm \
   --treat-missing-data notBreaching
 ```
 
-For detailed setup instructions, see [SETUP.md](./SETUP.md).
 
 ## 📖 Usage
 
@@ -248,48 +244,6 @@ See [SETUP.md](./SETUP.md) for the complete policy document.
 - Check all IAM policy statements are attached to the role
 - Wait 5–10 seconds after attaching policies before testing
 
-For more help, see [TROUBLESHOOTING.md](./TROUBLESHOOTING.md).
-
-## 📚 Additional Resources
-
-- [AWS Auto Scaling Documentation](https://docs.aws.amazon.com/autoscaling/)
-- [CloudWatch Alarms](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatch.html)
-- [Lambda Best Practices](https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html)
-- [EC2 Health Checks](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html)
-
-## 🤝 Contributing
-
-Contributions are welcome! Please:
-
-1. Test your changes against the full setup guide
-2. Update documentation for any new features
-3. Ensure all code follows Python style guidelines (PEP 8)
-4. Add test cases for new recovery actions
-5. Submit pull requests with clear descriptions
-
 ## 📄 License
 
 This project is licensed under the MIT License. See [LICENSE](./LICENSE) for details.
-
-## 💡 Design Philosophy
-
-This implementation prioritizes:
-
-- **Simplicity** — Uses only AWS native services, no third-party tools
-- **Reliability** — Alarm watches the group, not individual instances; scales to any ASG size
-- **Observability** — Dual notification streams (detection + action) create clear audit trail
-- **Maintainability** — Minimal state, no databases, stateless Lambda function
-- **Safety** — Conservative thresholds, datapoint requirements, and explicit permission scoping
-
-## 📞 Support
-
-For issues, questions, or suggestions:
-- Open an [issue](https://github.com/yourusername/auto-healing-infrastructure/issues)
-- Check [TROUBLESHOOTING.md](./TROUBLESHOOTING.md)
-- Review the [full setup guide](./SETUP.md)
-
----
-
-**Last Updated:** June 2026  
-**Status:** Production Ready  
-**Tested On:** AWS CLI v2, Python 3.11, Bash 5.0+
