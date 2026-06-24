@@ -1,0 +1,81 @@
+# =========================
+# Terraform
+# =========================
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# =========================
+# AWS Credentials
+# =========================
+.aws/
+credentials
+config
+
+# =========================
+# Environment Variables
+# =========================
+.env
+.env.*
+*.env
+
+# =========================
+# Lambda Deployment Packages
+# =========================
+*.zip
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+venv/
+.venv/
+env/
+
+# =========================
+# Logs
+# =========================
+*.log
+logs/
+
+# =========================
+# IDE Files
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Testing Artifacts
+# =========================
+coverage/
+.pytest_cache/
+
+# =========================
+# Sensitive Config Files
+# =========================
+terraform.tfvars
+*.pem
+*.key
+*.crt
+
+# =========================
+# AWS CLI Outputs
+# =========================
+*.json.bak
