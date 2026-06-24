@@ -1,0 +1,22 @@
+{
+  "AlarmName": "asg-capacity-degraded",
+  "AlarmDescription": "Triggers when healthy instances in the Auto Scaling Group drop below desired capacity.",
+  "Namespace": "AWS/AutoScaling",
+  "MetricName": "GroupInServiceInstances",
+  "Dimensions": [
+    {
+      "Name": "AutoScalingGroupName",
+      "Value": "auto-healing-asg"
+    }
+  ],
+  "Statistic": "Average",
+  "Period": 60,
+  "EvaluationPeriods": 2,
+  "DatapointsToAlarm": 2,
+  "Threshold": 2,
+  "ComparisonOperator": "LessThanThreshold",
+  "TreatMissingData": "notBreaching",
+  "AlarmActions": [
+    "arn:aws:sns:us-east-1:123456789012:auto-healing-notifications"
+  ]
+}
